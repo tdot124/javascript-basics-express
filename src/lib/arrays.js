@@ -1,21 +1,13 @@
 const getNthElement = (index, array) => {
   return array[index % array.length];
-  
-  /*if (index > (array.length -1)) {
-  return array[index % array.length];
-  } else {
-    return array[index];
-  } */
 };
 
 const arrayToCSVString = array => {
-  return array.join(",");
-  /*const output = array.reduce((acc,value) => acc + "," + value);
-  return output;*/
+  return array.join(',');
 };
 
 const csvStringToArray = string => {
-  return string.split(",");
+  return string.split(',');
 };
 
 const addToArray = (element, array) => {
@@ -23,43 +15,47 @@ const addToArray = (element, array) => {
 };
 
 const addToArray2 = (element, array) => {
-  let newArray = [element];
-  let merge = array.concat(newArray);
-  return merge;  
+  const newArray = [element];
+  const merge = array.concat(newArray);
+  return merge;
 };
 
 const removeNthElement = (index, array) => {
-  array.splice(index,1);
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
   const strings = numbers.map(num => {
-    return String(num)
+    return String(num);
   });
   return strings;
 };
 
 const uppercaseWordsInArray = strings => {
   const upper = strings.map(str => {
-    return str.toUpperCase()
+    return str.toUpperCase();
   });
   return upper;
 };
 
 const reverseWordsInArray = strings => {
-  const reverseString = (str) => str.split("").reverse().join("");
-  const result = strings.map(reverseString)
+  const reverseString = str =>
+    str
+      .split('')
+      .reverse()
+      .join('');
+  const result = strings.map(reverseString);
   return result;
 };
 
 const onlyEven = numbers => {
-  const result = numbers.filter(num => (num % 2) === 0);
+  const result = numbers.filter(num => num % 2 === 0);
   return result;
 };
 
 const removeNthElement2 = (index, array) => {
-  const arrayCopy = array.map((x) => x);
-  arrayCopy.splice(index,1);
+  const arrayCopy = array.map(x => x);
+  arrayCopy.splice(index, 1);
   return arrayCopy;
 };
 
@@ -70,15 +66,15 @@ const elementsStartingWithAVowel = strings => {
 };
 
 const removeSpaces = string => {
-  return string.split(" ").join("");
+  return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-  return sum = numbers.reduce((acc,number) => acc + number);
+  return (sum = numbers.reduce((acc, number) => acc + number));
 };
 
 const sortByLastLetter = strings => {
-  return strings.sort((a,b) => a.charCodeAt(a.length-1) - b.charCodeAt(b.length-1));
+  return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 };
 
 module.exports = {
@@ -96,5 +92,5 @@ module.exports = {
   elementsStartingWithAVowel,
   removeSpaces,
   sumNumbers,
-  sortByLastLetter
+  sortByLastLetter,
 };
